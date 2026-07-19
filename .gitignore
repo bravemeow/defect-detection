@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Data
+data/raw/
+data/processed/
+
+# ML models
+models/*.pth
+models/*.pt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
