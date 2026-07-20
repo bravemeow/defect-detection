@@ -19,3 +19,6 @@ models/*.pt
 
 # Environment
 .env
+
+# Docker
+.devcontainer
