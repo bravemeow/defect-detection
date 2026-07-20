@@ -1,0 +1,9 @@
+services:
+  defect-detection:
+    image: defect-detection-env
+    container_name: defect-detection-dev
+    volumes:
+      - .:/app
+    working_dir: /app
+    stdin_open: true
+    tty: true
