@@ -19,6 +19,7 @@ models/*.pt
 
 # Environment
 .env
+.vscode
 
 # Docker
 .devcontainer
