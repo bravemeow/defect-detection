@@ -28,6 +28,7 @@
 -   [x] `dataset.py`
 -   [x] Implement custom `torch.utils.data.Dataset`
 
+> learned: dataset returns a single sample.
 ### Preprocessing
 
 -   [x] `transforms.py`
@@ -51,16 +52,27 @@
 -   [x] Pin memory
 
 > learned:
+> dataloader batches multiple samples.
 > multiple workers use multipler cpu processes to prepare batches, keeping GPU is busy.
 > pin memory speeds up data transfer from CPU RAM to GPU VRAM.
 ------------------------------------------------------------------------
 
 ## Phase 2 --- Baseline Model
 
--   [ ] Simple CNN
--   [ ] Training loop
--   [ ] Validation loop
--   [ ] Save checkpoints
+### Model
+- [ ] Build Simple CNN
+- [ ] Forward pass
+- [ ] Verify output shape
+
+### Training
+- [ ] Loss function
+- [ ] Optimizer
+- [ ] Training loop
+- [ ] Validation loop
+
+### Checkpoint
+- [ ] Save best model
+- [ ] Load checkpoint
 
 ------------------------------------------------------------------------
 
@@ -69,6 +81,7 @@
 -   [ ] Accuracy
 -   [ ] Precision
 -   [ ] Recall
+-   [ ] Validation loss curve
 -   [ ] F1 Score
 -   [ ] Confusion Matrix
 -   [ ] Misclassified image visualization
@@ -114,8 +127,8 @@
 
 ## Current Progress
 
-**Completed:** Phase 0 + Dataset split
+**Completed:** Phase 0 + Phase 1
 
-**Current focus:** Build a custom PyTorch Dataset (`dataset.py`).
+**Current focus:** Build the first CNN baseline model.
 
-**Next milestone:** Feed batches of images into the first CNN.
+**Next milestone:** Train the first CNN and verify the training pipeline.
