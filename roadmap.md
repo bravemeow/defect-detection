@@ -104,7 +104,7 @@
 
 -   [x] feature/docker-setup
 -   [x] feature/data-pipeline
--   [ ] feature/dataset
+-   [x] feature/dataset
 -   [ ] feature/model
 -   [ ] feature/training
 -   [ ] feature/evaluation
