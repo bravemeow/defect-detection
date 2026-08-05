@@ -1,6 +1,7 @@
 
 import torch.nn as nn
 
+
 class SimpleCNN(nn.Module):
     def __init__(self):
         super().__init__()
@@ -26,9 +27,6 @@ class SimpleCNN(nn.Module):
         self.pool = nn.MaxPool2d(kernel_size=2)
         self.flatten = nn.Flatten(start_dim=1)
         self.linear = nn.Linear(43264, 2)  # 43264 is computed manually for learning purpose.
-
-        
-
 
     def forward(self, x):
         x = self.conv1(x)
