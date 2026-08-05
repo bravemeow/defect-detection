@@ -25,31 +25,34 @@
 
 ### Image loading
 
--   [ ] `dataset.py`
--   [ ] Implement custom `torch.utils.data.Dataset`
+-   [x] `dataset.py`
+-   [x] Implement custom `torch.utils.data.Dataset`
 
 ### Preprocessing
 
--   [ ] `preprocess.py`
--   [ ] Read image
--   [ ] BGR → RGB
--   [ ] Resize
--   [ ] Normalize
+-   [x] `transforms.py`
+-   [x] Read image
+-   [x] BGR → RGB
+-   [x] Resize
+-   [x] Normalize
 
+> learned: compute dataset mean/std from the training set for normalization.
 ### Data augmentation
 
--   [ ] `transforms.py`
--   [ ] Train transforms
--   [ ] Validation transforms
--   [ ] Test transforms
+-   [x] Train transforms
+-   [x] Validation transforms
+-   [x] Test transforms
 
 ### DataLoader
 
--   [ ] Batch loading
--   [ ] Shuffle
--   [ ] Multiple workers
--   [ ] Pin memory
+-   [x] Batch loading
+-   [x] Shuffle
+-   [x] Multiple workers
+-   [x] Pin memory
 
+> learned:
+> multiple workers use multipler cpu processes to prepare batches, keeping GPU is busy.
+> pin memory speeds up data transfer from CPU RAM to GPU VRAM.
 ------------------------------------------------------------------------
 
 ## Phase 2 --- Baseline Model
