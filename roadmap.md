@@ -60,16 +60,23 @@
 ## Phase 2 --- Baseline Model
 
 ### Model
-- [ ] Build Simple CNN
-- [ ] Forward pass
-- [ ] Verify output shape
+- [x] Build Simple CNN
+- [x] Forward pass
+- [x] Verify output shape
 
 ### Training
-- [ ] Loss function
-- [ ] Optimizer
-- [ ] Training loop
+- [x] Loss function
+- [x] Optimizer
+- [x] Training loop
 - [ ] Validation loop
 
+> struggles: separated docker composes reuiqred for Mac Air (CPU) & Desktop (GPU)
+```
+Desktop (GPU)
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+Mac Air (CPU)
+docker compose up -d
+```
 ### Checkpoint
 - [ ] Save best model
 - [ ] Load checkpoint

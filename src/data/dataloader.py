@@ -16,8 +16,9 @@ def create_loaders(data_dir, batch_size):
         train_dataset,
         batch_size=batch_size,
         shuffle=True,
-        # num_workers=4,
-        # pin_memory=True
+        num_workers=8,
+        pin_memory=True,
+        persistent_workers=True
     )
 
     val_dataset = CrackDataset(
@@ -28,8 +29,9 @@ def create_loaders(data_dir, batch_size):
         val_dataset,
         batch_size=batch_size,
         shuffle=False,
-        # num_workers=4,
-        # pin_memory=True
+        num_workers=8,
+        pin_memory=True,
+        persistent_workers=True
     )
 
     test_dataset = CrackDataset(
@@ -40,8 +42,9 @@ def create_loaders(data_dir, batch_size):
         test_dataset,
         batch_size=batch_size,
         shuffle=False,
-        # num_workers=4,
-        # pin_memory=True
+        num_workers=8,
+        pin_memory=True,
+        persistent_workers=True
     )
 
     return train_loader, val_loader, test_loader

@@ -7,3 +7,4 @@ services:
     working_dir: /app
     stdin_open: true
     tty: true
+    shm_size: "8gb"

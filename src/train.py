@@ -7,7 +7,10 @@ train_loader, val_loader, test_loader = create_loaders(
     data_dir = ("data/processed"),
     batch_size = 32,
 )
-model = SimpleCNN()
+
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")   # GPU/CPU compatibility
+model = SimpleCNN().to(device)
 
 criterion = nn.CrossEntropyLoss()
 
@@ -19,7 +22,6 @@ optimizer = torch.optim.Adam(
 NUM_EPOCHS = 1
 
 for epoch in range(NUM_EPOCHS):
-
     model.train()   # ML convention. It does nothing for this model.
 
     running_loss = 0
@@ -28,6 +30,10 @@ for epoch in range(NUM_EPOCHS):
 
     for batch_idx, (images, labels) in enumerate(train_loader):
         optimizer.zero_grad()
+
+        # CPU -> GPU memory
+        images = images.to(device)
+        labels = labels.to(device)
 
         outputs = model(images)
 
@@ -44,11 +50,10 @@ for epoch in range(NUM_EPOCHS):
         correct += (predictions == labels).sum().item()
 
         total += labels.size(0)
-
-        if (batch_idx + 1) % 100 == 0:
+        if (batch_idx + 1) % 50 == 0:
             print(
-                f"Epoch {epoch + 1}/{NUM_EPOCHS} | "
-                f"Batch {batch_idx + 1}/{len(train_loader)} | "
+                f"Epoch [{epoch+1}/{NUM_EPOCHS}] "
+                f"Step [{batch_idx+1}/{len(train_loader)}] "
                 f"Loss: {loss.item():.4f}"
             )
 
